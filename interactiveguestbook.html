@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Interactive Guestbook</title>
+  <style>.img-container { /*Wack name for centering everything but hey, I'm no HTML genious and honestly quite lazy*/
+          text-align: center;
+        }
+  	.center-block {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+   }</style>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link href="styles.css" rel="stylesheet" type="text/css">
+  <!--favicon below-->
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <script src="libries/p5.js"></script>
+  <script src="libries/p5.sound.js"></script>
+  <!-- <script src="libries/p5.sound.js.map"></script> -->
+  <!-- <script src="libries/p5.min.js"></script> -->
+  <!-- <script src="libries/p5.min.js.map"></script> -->
+   <!-- sketch name -->
+
+  <script src="https://unpkg.com/@free-side/audioworklet-polyfill/dist/audioworklet-polyfill.js"></script>
+  <!-- https worksaround-->
+</head>
+<!--PROJECT FOLDER NEEDS TO BE ON TOP FOR ATOM LIVE SERVER TO RUN FOR CORRECT FOLDER -->
+<body>
+  <header>
+    <div class="jumbotron">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+  			<h1 class="text-center"><a href="http://www.theodorkentros.com" style="color:#fff;">GUESTBOOK</a></h1>
+  <!--          <p class="text-center"> Skriv någon liten bio här</p> -->
+  <!--          <p>&nbsp;</p>-->
+          <!--  <p class="text-center"><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> </p>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  	</header>
+<!-- <h3 class="text-center">Scroll down to upload a photo</h3> -->
+<p class="text-center">
+    UPLOAD A PHOTO BELOW TO CREATE A SINE TONE DRONE WHEN SAID PHOTO IS CLICKED.<br>
+  <small>FREQUENCIES PLAYING WHEN PHOTO IS CLICKED DEPENDS ON THE RGB VALUE OF THE POSITION
+  OF THE CURSOR.<br>
+  <small>UPLOADED PHOTO OVERWRITES CURRENT PHOTO.<br>
+    <small><small>THIS IS A WORK IN PROGRESS. FEEL FREE TO REPORT BUGS OR GIVE SUGGESTIONS VIA THEODOR[DOT]KENTROS[AT]GMAIL[DOT]COM.</small></small>
+  </small>
+ </small>
+</p>
+
+
+
+<h2 class="text-center">
+  <div id="p5_loading" class="loadingclass">GIMME A SEC...</div>
+</h2>
+  <!--Raden ovan ska vara det som fixar "loading till ngt annat" -->
+
+<!-- <div class="img-container" width="40%" height="40%"> -->
+<h2 class="text-center">
+  <div id="sketch"> <!--Thank you http://fh-potsdam.github.io/steel-ant-input-output/examples/center-canvas/ -->
+    <script src="interactiveguestbook.js"></script>
+  </div>
+</h2>
+<!-- </div> -->
+<section>
+  <div class="container ">
+    <br><br><br><br>
+  <!--  <h3 class="text-center">Scroll down to upload a photo</h3> -->
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br>
+
+      <h4>UPLOAD AN IMAGE TO ANALYZE<p>
+      <small>ONLY .JPG, MAX 3MB AND AT LEAST TRY TO KEEP IT PG-13.<br>
+      <small>BY UPLOADING A PHOTO YOU AGREE THAT SAID PHOTO WILL BE STORED ON THE SERVER UNTIL OVERWRITTEN.
+      </small></small></p></h4>
+
+
+
+<form action="upload.php" method="post" enctype="multipart/form-data">
+  <!-- <p>SELECT AN IMAGE TO UPLOAD (ONLY .JPG, MAX FILESIZE 3MB):</p> -->
+  <input type="file" name="fileToUpload" id="fileToUpload">
+  <p></p>
+<!--  <input type="text" name="renamed" id="renamed"> TEST FOR NAMING FILE -->
+  <input type="submit" value="Upload" name="submit">
+</form>
+<br><br>
+</section>
+
+  <main>
+  </main>
+
+  <script src="js/jquery-1.11.3.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.js"></script>
+</body>
+
+</html>
